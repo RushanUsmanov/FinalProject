@@ -9,4 +9,8 @@ class MainPage(BasePage):
         login_link.click()
 
     def should_be_login_link(self):
+<<<<<<< HEAD
         assert self.is_element_present(*MainPageLocators.LOGIN_LINK), "Login link is not presented"
+=======
+        self.browser.find_element(By.CSS_SELECTOR, "#login_link_invalid")
+>>>>>>> parent of e445786 (Add files from lesson 4.2 step 6)
