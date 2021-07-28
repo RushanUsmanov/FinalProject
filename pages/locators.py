@@ -27,4 +27,4 @@ class PriceProduct():
 
 
 class PriceProductAfterAddInBasket():
-    PRICE_AFTER = (By.CSS_SELECTOR, ".alert-info .alertinner")
+    PRICE_AFTER = (By.CSS_SELECTOR, ".alertinner p strong")
