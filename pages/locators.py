@@ -10,21 +10,10 @@ class LoginPageLocators():
     REGISTRATION_FORM = (By.CSS_SELECTOR, "[id='register_form']")
 
 
-class Basket():
+class ProductPageLocators():
     BASKET = (By.CSS_SELECTOR, ".btn-add-to-basket")
-
-
-class NameProduct():
-    ITEM = (By.CSS_SELECTOR, ".product_main h1")
-
-
-class NameProductAfterAddInBasket():
-    ITEM_AFTER = (By.CSS_SELECTOR, ".alertinner strong")
-
-
-class PriceProduct():
+    NAME_ITEM = (By.CSS_SELECTOR, ".product_main h1")
+    NAME_ITEM_AFTER_ADD = (By.CSS_SELECTOR, ".alertinner strong")
     PRICE = (By.CSS_SELECTOR, ".product_main .price_color")
-
-
-class PriceProductAfterAddInBasket():
-    PRICE_AFTER = (By.CSS_SELECTOR, ".alertinner p strong")
+    PRICE_AFTER_ADD = (By.CSS_SELECTOR, ".alertinner p strong")
+    SUCCESS_MESSAGE = (By.CSS_SELECTOR, ".alert-success")
