@@ -4,13 +4,14 @@ from selenium.common.exceptions import NoAlertPresentException
 import math
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from .locators import BasePageLocators
 
 
 class BasePage():
-    def __init__(self, browser, url, timeout=10):
+    def __init__(self, browser, url, timeout=0):
         self.browser = browser
         self.url = url
-        # self.browser.implicitly_wait(timeout)
+        self.browser.implicitly_wait(timeout)
 
     # Функция открытия браузера
     def open(self):
@@ -57,3 +58,13 @@ class BasePage():
             return False
 
         return True
+
+    # Функция для перехода по кнопке логина
+    def go_to_login_page(self):
+        link = self.browser.find_element(*BasePageLocators.LOGIN_LINK_INVALID)
+        link.click()
+
+    # Функция проверки присутствия элемента кнопки логина
+    def should_be_login_link(self):
+        assert self.is_element_present(*BasePageLocators.LOGIN_LINK), "Login link is not presented"
+
