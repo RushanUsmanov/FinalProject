@@ -8,6 +8,8 @@ from .locators import BasePageLocators
 
 
 class BasePage():
+    # Timeout пока отключен, тк есть тесты где вызывает конфликт, преднамеренно не убрал из кода, а просто выставил
+    # значение 0
     def __init__(self, browser, url, timeout=0):
         self.browser = browser
         self.url = url
@@ -68,6 +70,7 @@ class BasePage():
     def should_be_login_link(self):
         assert self.is_element_present(*BasePageLocators.LOGIN_LINK), "Login link is not presented"
 
+    # Функция проверки, что пользователь авторизован
     def should_be_authorized_user(self):
         assert self.is_element_present(*BasePageLocators.USER_ICON), "User icon is not presented," \
                                                                      " probably unauthorised user"
